@@ -1,27 +1,153 @@
-"""Project-specific context module."""
+"""Project-specific metadata for the local runtime."""
 
-from __future__ import annotations
+from agents.models import ProjectSpec
 
-PROJECT_CONTEXT = {
-  "project_name": "Gasless Field Runner",
-  "track": "Status L2 Go Gasless",
-  "pitch": "A gasless-first action relay that assembles execution bundles and proofs suitable for Status L2 Sepolia while keeping live relayer wiring optional.",
-  "overlap_targets": [
-    "Celo",
-    "Bankr Gateway",
-    "ERC-8004 Receipts",
-    "ENS",
-    "MetaMask Delegations",
-    "Cook"
-  ],
-  "goals": [
-    "discover a bounded opportunity",
-    "plan a dry-run-first action",
-    "verify receipts and proofs"
-  ]
-}
+PROJECT_CONTEXT = {'repo_name': 'Synthesis-StatusL2',
+ 'project_name': 'Gasless Field Runner',
+ 'track': 'Status L2 Go Gasless',
+ 'pitch': 'A gasless-first action relay that assembles execution bundles and proofs '
+          'suitable for Status L2 Sepolia while keeping live relayer wiring optional.',
+ 'idea_titles': ['Gasless Autonomous Trader',
+                 'Zero-Gas Deployment Bot',
+                 'Messaging-Native Action Feed'],
+ 'architecture_summary': 'A gasless-first loop builds action bundles and settlement '
+                         'proofs suitable for Status L2 Sepolia. The controller '
+                         'contract stores nonce, operator, and policy state while '
+                         'local scripts keep live execution disabled until an actual '
+                         'relayer and wallet are attached.',
+ 'overlap_targets': ['Celo',
+                     'Bankr Gateway',
+                     'ERC-8004 Receipts',
+                     'ENS',
+                     'MetaMask Delegations',
+                     'Cook'],
+ 'primary_contract_name': 'GaslessActionRelay',
+ 'primary_python_module': 'status_field_runner',
+ 'category': 'gasless',
+ 'daily_budget_usd': 102,
+ 'per_action_budget_usd': 25,
+ 'cooldown_seconds': 900,
+ 'discovery_inputs': [{'name': 'relay_jobs',
+                       'description': 'Gasless requests and relay eligibility data.'},
+                      {'name': 'payment_float',
+                       'description': 'Treasury float and fallback funding rails.'},
+                      {'name': 'execution_bundle',
+                       'description': 'Relay package and dry-run outcome.'},
+                      {'name': 'receipts',
+                       'description': 'Status L2 proof bundle and final notes.'}],
+ 'live_demo_steps': ['Copy .env.example to .env and fill the required keys.',
+                     'Deploy the contract with forge script script/Deploy.s.sol '
+                     '--broadcast for GaslessActionRelay.',
+                     'Run python3 scripts/run_agent.py to produce a dry run for '
+                     'status_field_runner.',
+                     'Set LIVE_MODE=true and rerun python3 scripts/run_agent.py with '
+                     'real credentials.',
+                     'Run python3 scripts/render_submission.py and attach TxIDs plus '
+                     'repo links.'],
+ 'partners': [{'name': 'Status L2',
+               'docs_url': 'https://status.app/',
+               'env_vars': ['STATUS_RPC_URL', 'STATUS_RELAYER_URL'],
+               'endpoint_env': 'STATUS_RELAYER_URL',
+               'action_kind': 'rest_json',
+               'purpose': 'Prepare gasless relay bundles for Status L2.'},
+              {'name': 'Celo',
+               'docs_url': 'https://docs.celo.org/',
+               'env_vars': ['CELO_RPC_URL'],
+               'endpoint_env': '',
+               'action_kind': 'contract_call',
+               'purpose': 'Settle stablecoin-native transfers on Celo rails.'},
+              {'name': 'Bankr Gateway',
+               'docs_url': 'https://bankr.bot/',
+               'env_vars': ['BANKR_API_KEY',
+                            'BANKR_CHAT_COMPLETIONS_URL',
+                            'BANKR_MODEL'],
+               'endpoint_env': 'BANKR_CHAT_COMPLETIONS_URL',
+               'action_kind': 'rest_json',
+               'purpose': 'Route inference through cost-aware model selection.'},
+              {'name': 'ERC-8004 Receipts',
+               'docs_url': 'https://eips.ethereum.org/EIPS/eip-8004',
+               'env_vars': ['RPC_URL'],
+               'endpoint_env': '',
+               'action_kind': 'contract_call',
+               'purpose': 'Anchor identity, task receipts, and reputation updates.'},
+              {'name': 'ENS',
+               'docs_url': 'https://docs.ens.domains/',
+               'env_vars': ['ENS_NAME'],
+               'endpoint_env': '',
+               'action_kind': 'contract_call',
+               'purpose': 'Publish human-readable coordination and identity receipts.'},
+              {'name': 'MetaMask Delegations',
+               'docs_url': 'https://docs.metamask.io/delegation-toolkit/',
+               'env_vars': ['RPC_URL'],
+               'endpoint_env': '',
+               'action_kind': 'contract_call',
+               'purpose': 'Enforce delegation scopes, expiries, and intent '
+                          'envelopes.'}],
+ 'actions': [{'id': 'status_l2_gasless_bundle',
+              'target': 'status_l2',
+              'purpose': 'Use Status L2 for a bounded action in this repo.',
+              'partner': 'Status L2',
+              'action_kind': 'rest_json',
+              'max_amount_usd': 8,
+              'priority': 100,
+              'sensitivity': 'medium',
+              'notes': ['Call Status L2 only after a dry-run artifact exists.',
+                        'Use https://status.app/ for credential setup.']},
+             {'id': 'celo_payment_settle',
+              'target': 'celo',
+              'purpose': 'Use Celo for a bounded action in this repo.',
+              'partner': 'Celo',
+              'action_kind': 'contract_call',
+              'max_amount_usd': 150,
+              'priority': 95,
+              'sensitivity': 'low',
+              'notes': ['Call Celo only after a dry-run artifact exists.',
+                        'Use https://docs.celo.org/ for credential setup.']},
+             {'id': 'bankr_gateway_compute_route',
+              'target': 'bankr_gateway',
+              'purpose': 'Use Bankr Gateway for a bounded action in this repo.',
+              'partner': 'Bankr Gateway',
+              'action_kind': 'rest_json',
+              'max_amount_usd': 10,
+              'priority': 90,
+              'sensitivity': 'high',
+              'notes': ['Call Bankr Gateway only after a dry-run artifact exists.',
+                        'Use https://bankr.bot/ for credential setup.']},
+             {'id': 'erc_8004_receipts_receipt_anchor',
+              'target': 'erc_8004_receipts',
+              'purpose': 'Use ERC-8004 Receipts for a bounded action in this repo.',
+              'partner': 'ERC-8004 Receipts',
+              'action_kind': 'contract_call',
+              'max_amount_usd': 1,
+              'priority': 85,
+              'sensitivity': 'medium',
+              'notes': ['Call ERC-8004 Receipts only after a dry-run artifact exists.',
+                        'Use https://eips.ethereum.org/EIPS/eip-8004 for credential '
+                        'setup.']},
+             {'id': 'ens_ens_publish',
+              'target': 'ens',
+              'purpose': 'Use ENS for a bounded action in this repo.',
+              'partner': 'ENS',
+              'action_kind': 'contract_call',
+              'max_amount_usd': 5,
+              'priority': 80,
+              'sensitivity': 'low',
+              'notes': ['Call ENS only after a dry-run artifact exists.',
+                        'Use https://docs.ens.domains/ for credential setup.']},
+             {'id': 'metamask_delegations_delegate_scope',
+              'target': 'metamask_delegations',
+              'purpose': 'Use MetaMask Delegations for a bounded action in this repo.',
+              'partner': 'MetaMask Delegations',
+              'action_kind': 'contract_call',
+              'max_amount_usd': 2,
+              'priority': 75,
+              'sensitivity': 'high',
+              'notes': ['Call MetaMask Delegations only after a dry-run artifact '
+                        'exists.',
+                        'Use https://docs.metamask.io/delegation-toolkit/ for '
+                        'credential setup.']}]}
 
 
-def seed_targets() -> list[str]:
-    """Return the first batch of overlap targets for planning."""
-    return list(PROJECT_CONTEXT['overlap_targets'])
+def build_project_spec() -> ProjectSpec:
+    """Return the repository-specific project metadata."""
+    return ProjectSpec.from_dict(PROJECT_CONTEXT)

@@ -1,9 +1,13 @@
+
 [project]
 name = "synthesis_statusl2"
 version = "0.1.0"
 description = "A gasless-first action relay that assembles execution bundles and proofs suitable for Status L2 Sepolia while keeping live relayer wiring optional."
 readme = "README.md"
 requires-python = ">=3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 100
