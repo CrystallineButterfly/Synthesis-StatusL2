@@ -1,6 +1,6 @@
 # Gasless Field Runner
 
-- **Repo:** TODO_GITHUB_URL/Synthesis-StatusL2
+- **Repo:** https://github.com/CrystallineButterfly/Synthesis-StatusL2
 - **Primary track:** Status L2 Go Gasless
 - **Overlap targets:** Celo, Bankr Gateway, ERC-8004 Receipts, ENS, MetaMask Delegations, Cook
 - **Primary contract:** GaslessActionRelay
