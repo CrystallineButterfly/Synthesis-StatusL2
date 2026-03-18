@@ -1,6 +1,6 @@
 # Gasless Field Runner
 
-- **Repo:** https://github.com/CrystallineButterfly/Synthesis-StatusL2
+- **Repo:** TODO_GITHUB_URL/Synthesis-StatusL2
 - **Primary track:** Status L2 Go Gasless
 - **Overlap targets:** Celo, Bankr Gateway, ERC-8004 Receipts, ENS, MetaMask Delegations, Cook
 - **Primary contract:** GaslessActionRelay
@@ -18,10 +18,10 @@ A gasless-first action relay that assembles execution bundles and proofs suitabl
   "status": "verified",
   "project_name": "Gasless Field Runner",
   "track": "Status L2 Go Gasless",
-  "plan_id": "0x5b4257b11c581a95fc45e53f6e182413032dfc1a69e8e514989488d30b641f2d",
-  "simulation_hash": "0xc4c1ee5b7b67cfd6e287345bd33a6c776f2721b74056ff0f20e9c905e04a72b1",
+  "plan_id": "0x94cbb5dcc2a5252ed359033d3b380f4b05767f9c8e334d7efacfc9ff803d6c31",
+  "simulation_hash": "0x1f74353ba989589d76eca23bcc9e16812a0071e96a736a2ba2b055a67a98365f",
   "execution_status": "awaiting_credentials",
   "tx_ids": [],
-  "created_at": "2026-03-18T21:44:15+00:00"
+  "created_at": "2026-03-18T23:01:32+00:00"
 }
 ```
