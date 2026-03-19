@@ -7,5 +7,559 @@
     "details": {
       "status": "ready_for_credentials"
     }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:23+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "relay_jobs",
+          "description": "Gasless requests and relay eligibility data.",
+          "score": 95
+        },
+        {
+          "name": "payment_float",
+          "description": "Treasury float and fallback funding rails.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Relay package and dry-run outcome.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Status L2 proof bundle and final notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:23+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0x1f4927097e952bff792545964ab3ddf0a275e65bd991577d6edfe5f668b4ec61"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:23+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xe02aa7b80884db9f5901d3b3656fb9c778d78e4aea29cc1a1d22fbb2e0e1cc0f"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:23+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "CELO_RPC_URL",
+        "ENS_NAME",
+        "RPC_URL",
+        "STATUS_RELAYER_URL",
+        "STATUS_RPC_URL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:23+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Gasless Field Runner",
+      "track": "Status L2 Go Gasless",
+      "plan_id": "0x1f4927097e952bff792545964ab3ddf0a275e65bd991577d6edfe5f668b4ec61",
+      "simulation_hash": "0xe02aa7b80884db9f5901d3b3656fb9c778d78e4aea29cc1a1d22fbb2e0e1cc0f",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:23+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:23+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "relay_jobs",
+          "description": "Gasless requests and relay eligibility data.",
+          "score": 95
+        },
+        {
+          "name": "payment_float",
+          "description": "Treasury float and fallback funding rails.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Relay package and dry-run outcome.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Status L2 proof bundle and final notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:23+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0x1f4927097e952bff792545964ab3ddf0a275e65bd991577d6edfe5f668b4ec61"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:23+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xe02aa7b80884db9f5901d3b3656fb9c778d78e4aea29cc1a1d22fbb2e0e1cc0f"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:23+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "CELO_RPC_URL",
+        "ENS_NAME",
+        "RPC_URL",
+        "STATUS_RELAYER_URL",
+        "STATUS_RPC_URL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:23+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Gasless Field Runner",
+      "track": "Status L2 Go Gasless",
+      "plan_id": "0x1f4927097e952bff792545964ab3ddf0a275e65bd991577d6edfe5f668b4ec61",
+      "simulation_hash": "0xe02aa7b80884db9f5901d3b3656fb9c778d78e4aea29cc1a1d22fbb2e0e1cc0f",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:23+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:39:23.678178+00:00",
+    "stage": "security_review",
+    "actor": "audit_pass",
+    "message": "Completed the shared hardening and offline-artifact audit pass.",
+    "details": {
+      "status": "audited_ready_pending_live_credentials",
+      "primary_contract": "GaslessActionRelay.sol"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:08+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "relay_jobs",
+          "description": "Gasless requests and relay eligibility data.",
+          "score": 95
+        },
+        {
+          "name": "payment_float",
+          "description": "Treasury float and fallback funding rails.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Relay package and dry-run outcome.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Status L2 proof bundle and final notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:08+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xf03a6385e91c32993dc9be87e5003f467bd559a4e55057f1e5739f85bd0593ea",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:08+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x1de9952a13541634e6b596de0510354b8530c47b6e34fa3ed0d84018fd487a93"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:08+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "STATUS_RELAYER_URL",
+        "STATUS_RPC_URL"
+      ],
+      "artifact_count": 4
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:08+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Gasless Field Runner",
+      "track": "Status L2 Go Gasless",
+      "plan_id": "0xf03a6385e91c32993dc9be87e5003f467bd559a4e55057f1e5739f85bd0593ea",
+      "simulation_hash": "0x1de9952a13541634e6b596de0510354b8530c47b6e34fa3ed0d84018fd487a93",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/celo_payment_settle.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json"
+      ],
+      "partner_statuses": {
+        "Status L2": "awaiting_credentials",
+        "Celo": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "ENS": "prepared_contract_call",
+        "MetaMask Delegations": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:49:08+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:50+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "relay_jobs",
+          "description": "Gasless requests and relay eligibility data.",
+          "score": 95
+        },
+        {
+          "name": "payment_float",
+          "description": "Treasury float and fallback funding rails.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Relay package and dry-run outcome.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Status L2 proof bundle and final notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:50+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0x98fc00cfc26f6c610ed156f9aaa4b755b34e279cb94fc99c47acb695a9e4b795",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:50+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x3b824faf1e44cf5982e9f20b260229e430f3be305f141913a45366d295fee7f7"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:50+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "STATUS_RELAYER_URL",
+        "STATUS_RPC_URL"
+      ],
+      "artifact_count": 4
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:50+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Gasless Field Runner",
+      "track": "Status L2 Go Gasless",
+      "plan_id": "0x98fc00cfc26f6c610ed156f9aaa4b755b34e279cb94fc99c47acb695a9e4b795",
+      "simulation_hash": "0x3b824faf1e44cf5982e9f20b260229e430f3be305f141913a45366d295fee7f7",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/celo_payment_settle.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json"
+      ],
+      "partner_statuses": {
+        "Status L2": "awaiting_credentials",
+        "Celo": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "ENS": "prepared_contract_call",
+        "MetaMask Delegations": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:50:50+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "relay_jobs",
+          "description": "Gasless requests and relay eligibility data.",
+          "score": 95
+        },
+        {
+          "name": "payment_float",
+          "description": "Treasury float and fallback funding rails.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Relay package and dry-run outcome.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Status L2 proof bundle and final notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0x5141c686057942b4d735fa1ba76c7a8fc537abce0749b21349c52f461c494737",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x9c96c688bddf80e6a680df90b56b356cb8cb22f34cdac4b3f6ae8991d9d6bea9"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "STATUS_RELAYER_URL",
+        "STATUS_RPC_URL"
+      ],
+      "artifact_count": 4
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:48+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Gasless Field Runner",
+      "track": "Status L2 Go Gasless",
+      "plan_id": "0x5141c686057942b4d735fa1ba76c7a8fc537abce0749b21349c52f461c494737",
+      "simulation_hash": "0x9c96c688bddf80e6a680df90b56b356cb8cb22f34cdac4b3f6ae8991d9d6bea9",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/celo_payment_settle.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json"
+      ],
+      "partner_statuses": {
+        "Status L2": "awaiting_credentials",
+        "Celo": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "ENS": "prepared_contract_call",
+        "MetaMask Delegations": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:51:48+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:19+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "relay_jobs",
+          "description": "Gasless requests and relay eligibility data.",
+          "score": 95
+        },
+        {
+          "name": "payment_float",
+          "description": "Treasury float and fallback funding rails.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Relay package and dry-run outcome.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Status L2 proof bundle and final notes.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:19+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xd204dc56be483c757f5df2e5e085ac17fdf63442f358af32d828096412d004f7",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:19+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xeef422c9cfdb9ac1ab919801932751a8b44905858edf29593fe04a5466efe90a"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:19+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "STATUS_RELAYER_URL",
+        "STATUS_RPC_URL"
+      ],
+      "artifact_count": 4
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:19+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Gasless Field Runner",
+      "track": "Status L2 Go Gasless",
+      "plan_id": "0xd204dc56be483c757f5df2e5e085ac17fdf63442f358af32d828096412d004f7",
+      "simulation_hash": "0xeef422c9cfdb9ac1ab919801932751a8b44905858edf29593fe04a5466efe90a",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/celo_payment_settle.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json"
+      ],
+      "partner_statuses": {
+        "Status L2": "awaiting_credentials",
+        "Celo": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "ENS": "prepared_contract_call",
+        "MetaMask Delegations": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:52:19+00:00"
+    }
   }
 ]
