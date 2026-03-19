@@ -5,7 +5,7 @@
 - **Category:** gasless
 - **Primary contract:** `GaslessActionRelay`
 - **Primary module:** `status_field_runner`
-- **Submission status:** implementation ready, waiting for credentials and TxIDs.
+- **Submission status:** audited and offline-demo ready; optional live partner credentials unlock network execution.
 
 ## What this repo does
 
@@ -67,6 +67,31 @@ flowchart TD
 3. Persist a dry-run artifact before any live execution.
 4. Enforce onchain policy through the guarded contract wrapper.
 5. Verify outputs, update receipts, and render submission material.
+
+## Current readiness
+
+- **Latest verification:** `verified` at `2026-03-19T03:52:19+00:00`
+- **Execution mode:** `offline_prepared`
+- **Offline-prepared partners:** Celo (prepared_contract_call), ERC-8004 Receipts (prepared_contract_call), ENS (prepared_contract_call), MetaMask Delegations (prepared_contract_call)
+- **Live credential blockers:** Status L2, Bankr Gateway
+- **Audit docs:** `docs/audit.md`, `docs/live_readiness.md`
+
+## Most sensitive actions
+
+- `bankr_gateway_compute_route` (Bankr Gateway, high)
+- `metamask_delegations_delegate_scope` (MetaMask Delegations, high)
+
+## Live blocker details
+
+- **Status L2** — STATUS_RPC_URL, STATUS_RELAYER_URL — https://status.app/
+- **Bankr Gateway** — BANKR_API_KEY, BANKR_CHAT_COMPLETIONS_URL, BANKR_MODEL — https://bankr.bot/
+
+## Latest evidence artifacts
+
+- `artifacts/onchain_intents/celo_payment_settle.json`
+- `artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json`
+- `artifacts/onchain_intents/ens_ens_publish.json`
+- `artifacts/onchain_intents/metamask_delegations_delegate_scope.json`
 
 ## Security controls
 
